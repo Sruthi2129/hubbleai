@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #01032e, #011428,#00ff99 120%,#001a33);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-top: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 550px;
+  margin-bottom: 30px;
+}
+
+.header .logo {
+  width: 120px;
+  height: 100px;
+  margin-right:980px;
+  margin-bottom:0px;
+}
+/* Center: Hubble logo + text */
+.hubble-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%);
+
+}
+
+/* Hubble “H” icon */
+.hubble-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Neon Bubble Text */
+.hubble-logo-text h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 77.4px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  gap: 10px;
+  background: linear-gradient(90deg, #22D4Bf 0%, #22D4Bf 50%, #22D4Bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  line-height: 100%;
+  /* Removed glow */
+}
+
+
+
+.header h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #40d0ff;
+  letter-spacing: 2px;
+  margin-right:600px;
+
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+}
+
+/* Card styling */
+.card {
+  width: 270px;              /* fixed width for all cards */
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Text */
+.card h2 {
+  color: #00e6ff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #c9d6ff;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+
+
+
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Status labels */
+.status {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.available {
+  background-color: #28a745;
+  color: white;
+}
+
+.coming-soon {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+}
+.card {
+  background: rgba(10, 20, 30, 0.9);
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  box-shadow: none; /* No shadow by default */
+}
+
+/* Hover glow effect */
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    -10px 0 25px rgba(0, 255, 180, 0.3),  /* green left side */
+    10px 0 25px rgba(0, 180, 245, 0.3),   /* blue right side */
+    0 0 40px rgba(0, 255, 220, 0.3);      /* soft center glow */
+}
+.card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 25px;
+  color: white;
+  width: 330px;
+  height: 220px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+  transform: translateY(-5px);
+}
+
+.arrow {
+  position: absolute;
+  bottom: 15px;
+  right: 19px;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #00aaff, #00ff99);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.5);
+
+}
+
+ .arrow:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.9);
+}
+
+.card-img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  display: block;
+}
+.card .icon-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;       /* makes it circular */
+  object-fit: cover;        /* crops nicely */
+  background: transparent;  /* removes black fill if any */
+  display: block;
+}
